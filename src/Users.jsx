@@ -1,14 +1,26 @@
 import React, { useState } from "react";
+import './users.css'
 
 
+function Users({data,index,func}){
+ const {img, name,age,city, friend} = data;
 
-function Users(){
 
-   const [score,setScore] = useState([1,2,3,4,5,6,7]);
     return (
-       <div>
-          {score.map(item => <h1>{item}</h1>)}
-    </div>
+       <div className="main">
+             <div className="child">
+                  <img className="img" src={img} alt="" />
+               <div className="profileData">
+                  <div className="data">
+                     <h1>{name}</h1>
+                     <h3>{age}</h3>
+                     <h4>{city}</h4>
+                  </div>   
+                  <button onClick={()=>func(index)}>{friend ? "Added" : "Add Friend"}</button>
+               </div>   
+               
+             </div>
+      </div>
     )
 }
 

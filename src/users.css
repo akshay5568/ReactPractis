@@ -1,0 +1,45 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+
+
+
+
+.main{
+    width: 15%;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid peachpuff;
+}
+
+.child{
+    height: 250px;
+    border-radius: 15px;
+}
+
+.child img{
+    width: 100%;
+    height: 60%;
+    background-color: aqua;
+    object-fit: cover;
+}
+
+.data{
+    padding: 5px 8px;
+}
+
+.profileData{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px;
+}
+
+.profileData button{
+    border: none;
+    background-color: greenyellow;
+    padding: 8px;
+    border-radius: 8px;
+}
