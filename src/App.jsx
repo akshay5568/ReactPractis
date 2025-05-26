@@ -1,33 +1,43 @@
-import React, { useState } from "react";
-import Users from "./Users";
+import React,{useState} from "react";
+import './index.css';
+import Users from  "./components/Users";
+import NavBar from "./components/Navbar";
+
+
 
 function App(){
-  
-  const row = [{img: "https://plus.unsplash.com/premium_photo-1682096252599-e8536cd97d2b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",name:"John",age:25,city:"New York", friend:false}
-              ,{img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",name:"Jane",age:30,city:"Los Angeles", friend:true}
-              ,{img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHBvcnRyYWl0fGVufDB8fDB8fHww",name:"Tom",age:28,city:"Chicago", friend:false}
-              ,{img: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D",name:"Lisa",age:27,city:"San Francisco", friend:false}
-              ];
 
-    let [val,setVal] = useState(row);          
-     const handelButton = (ranks) => {
-           setVal((prev)=> {
-           return prev.map((item,index) => {
-              if(index === ranks){
-                return{...item, friend: !item.friend}
-              }
-              return item;
-            })
-          })
-     }
+  let Data = [
+    {songName: 'Tere Naina' , fav: false , artist: 'Akshay Kumar' , img:"https://images.unsplash.com/photo-1495434942214-9b525bba74e9?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c29uZ3N8ZW58MHx8MHx8fDA%3D"},
+    {songName: 'Tu Chale' , fav: true , artist: 'Chiyyan Vikram' , img:"https://images.unsplash.com/photo-1562603820-5afce6c86210?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHNvbmdzfGVufDB8fDB8fHww"},
+    {songName: 'Aa Aa gya' , fav: false , artist: 'Salman Khan' , img:"https://plus.unsplash.com/premium_photo-1680550633623-8dc4548fb751?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8c29uZ3N8ZW58MHx8MHx8fDA%3D"},
+    {songName: 'Jara sa Joom' , fav: false , artist: 'Srk' , img:"https://images.unsplash.com/photo-1583604518057-6c31e12d4e30?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHNvbmdzfGVufDB8fDB8fHww"},
+    
+  ]
 
+ const [songData, setSongData] = useState(Data);
 
+const handleFav = (index) => {
+  setSongData((prev) => {
+    return prev.map((item,Setindex) => {
+      if(Setindex === index){
+        return {...item, fav:!item.fav}
+      }
+      return item;
+    })
+  })
+}
 
   return (
-    <div className="app">
-       {val.map((item, index) => <Users data={item} index={index} func={handelButton}/>)}
+    <div>
+      <NavBar data={songData}/>
+      <div className="userData">
+        {songData.map((item,index) => (
+        <Users key={index} data={item} index={index} handleFav={handleFav}/>
+      ))}
+      </div>
     </div>
-  )
+  );
 }
 
 
