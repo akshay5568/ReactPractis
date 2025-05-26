@@ -25,7 +25,7 @@ function App(){
 
   return (
     <div className="app">
-       {row.map((item, index) => <Users data={item} index={index} func={handelButton}/>)}
+       {val.map((item, index) => <Users data={item} index={index} func={handelButton}/>)}
     </div>
   )
 }
