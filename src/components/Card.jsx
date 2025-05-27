@@ -10,7 +10,7 @@ function Card({data, index, removeData}){
             <img src={data.img} alt="" />
             <h1>{data.name}</h1>
             <h4>{data.email}</h4>
-            <h5>Lorem ipsum dolor sit amet.</h5>
+            <h5>{data.des}</h5>
             <button onClick={()=>removeData(index)}>Remove it</button>
         </div>
      </div> 

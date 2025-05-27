@@ -15,9 +15,10 @@ function Form({addData}){
     return(
         <div className="form">
             <form action="" onSubmit={handleSubmit(handleForm)}>
-                <input {...register('name') }type="text" placeholder="name" />
-                <input {...register('email') }type="email" placeholder="email" />
-                <input {...register('img') }type="text" placeholder="img" />
+                <input {...register('name') }type="text" placeholder="name" required/>
+                <input {...register('email') }type="email" placeholder="email" required />
+                <input {...register('img') }type="text" placeholder="img"  />
+                <input {...register('des') }type="text" placeholder="description" required />
                 <button>Submit</button>
             </form>
         </div>
