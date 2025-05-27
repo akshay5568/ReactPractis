@@ -1,0 +1,22 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+/* html,body{
+    width: 100%;
+    height: 100%;
+} */
+
+
+
+.mainCards{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+    padding-top:40px ;
+}
