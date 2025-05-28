@@ -1,29 +1,15 @@
 import React from "react";
-import { useState } from "react";
-import "./index.css"
-import Cards from "./components/cards";
-import Form from "./components/Form";
+import Navbar from './components/Navbar'
+import Routers from './utils/Routers'
 
 
 function App(){
-
-  const [data, setData] = useState([]);
-
-  const addData = (formData) => {
-     console.log(formData);
-     setData([...data, formData]);
-  }
-
-  const removeData = (index) => {
-     setData(data.filter((item,setIndex) => setIndex !== index));
-  } 
-
-  return (
-    <div className="mainApp">
-      <Cards data={data} removeData={removeData}/>
-      <Form addData={addData}/>
-    </div>
-  )
+    return (
+        <div className="main">
+            <Navbar />
+            <Routers />
+        </div>
+    )
 }
 
 
