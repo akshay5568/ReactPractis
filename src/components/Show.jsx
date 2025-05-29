@@ -24,7 +24,7 @@ function Show(){
             <button onClick={getData}>fatch Data From Api</button>
             <button onClick={addData}>Add Data in Api</button>
              <br /><br /><hr />
-            {product.length > 0 ? product.map(item => <h1>{item.title}</h1>) : "Loading..."}
+            {product.length > 0 ? product.map(item => <h1>{item.title}</h1>) : "Click Button fatch data button if you want to get data from and api...."}
         </div>
     )
 }

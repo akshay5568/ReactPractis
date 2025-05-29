@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Adddata(){
+   
    const {register, handleSubmit, reset} = useForm();
 
    const handleForm =  (data) => {
@@ -15,10 +16,11 @@ function Adddata(){
     const addDataInApi =  async (title,description,price) => {
         let api = 'https://fakestoreapi.com/products';
         const data = {title,description,price};
-        const dataSendToApi = await axios.post(api,data);
-        console.log(data);
-        console.log(dataSendToApi);
+        let dataFromApi = await axios.post(api,data);
+        console.log(dataFromApi);
    }
+
+
 
    const naviGate = useNavigate();
    const Navi = () => {
@@ -35,7 +37,7 @@ function Adddata(){
                     <input {...register('description')} type="text" placeholder="description" required/>
                     <button>Submit</button>
             </form>
-
+            
             <br /><br />
             <hr />
             <button onClick={Navi}>Go Back</button>
