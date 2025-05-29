@@ -5,7 +5,7 @@ import Routers from './utils/Routers'
 
 function App(){
     return (
-        <div className="main">
+        <div className="main w-full h-full">
             <Navbar />
             <Routers />
         </div>

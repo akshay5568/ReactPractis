@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 function Navbar(){
       return (
-        <nav>
-            <NavLink to='/' 
+        <nav className="w-full]">
+            <NavLink to='/'
               style={(e)=> e.isActive ? {color: "tomato"} : {color :"black"}}
             >Home</NavLink>
             <NavLink  to='/about' 
