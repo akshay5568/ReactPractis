@@ -5,7 +5,7 @@ function Hello(){
      const {name} = useParams();
      const Navi = useNavigate();   
      const goBack = () => {
-            Navi(-1);
+            Navi("/user");
      }  
      return (
     <div>

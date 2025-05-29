@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 
 function User(){
@@ -14,7 +14,8 @@ function User(){
         <Link to="/user/anisha" >Aditya</Link>
         <Link to="/user/ireland" >Aditya</Link>
        </div>
-
+       <hr />
+      <Outlet/>
       </div>
        </> 
     )
