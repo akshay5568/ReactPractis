@@ -1,22 +1,17 @@
+import {Router, Route } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
 
 
-function Navbar(){
-      return (
-        <nav className="w-full]">
-            <NavLink to='/'
-              style={(e)=> e.isActive ? {color: "tomato"} : {color :"black"}}
-            >Home</NavLink>
-            <NavLink  to='/about' 
-              style={(e)=> e.isActive ? {color: "tomato"} : {color :"black"}}
-            >About</NavLink>
-            <NavLink  to='/user' 
-              style={(e)=> e.isActive ? {color: "tomato"} : {color :"black"}}
-            >User</NavLink>
+function NavBar() {
+    return (
+        <nav>
+                <NavLink to="/" style={(e)=> e.isActive ? {color:"tomato"} : {color:"black"}}>Home</NavLink>
+                <NavLink to="/show" style={(e)=> e.isActive ? {color:"tomato"} : {color:"black"}}>Show</NavLink>
+                <NavLink to="/services" style={(e)=> e.isActive ? {color:"tomato"} : {color:"black"}}>Services</NavLink>
         </nav>
-      )
-}
+    )
 
+}   
 
-export default Navbar;
+export default NavBar;

@@ -1,17 +1,15 @@
-import React from "react";
-import Navbar from './components/Navbar'
-import Routers from './utils/Routers'
+import NavBar from "./components/Navbar";
+import Routess from "./Router/Routess";
 
 
 function App(){
-    return (
-        <div className="main w-full h-full">
-            <Navbar />
-            <Routers />
-        </div>
-    )
+   return (
+    <div>
+        <NavBar />
+        <Routess />
+    </div>
+   )
 }
-
 
 
 export default App;
