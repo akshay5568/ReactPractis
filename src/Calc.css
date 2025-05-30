@@ -1,0 +1,16 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.bg{
+    width: 100%;
+    height: fit-content;
+    background-color: salmon;
+    text-align: center;
+}
+
+button{
+    margin-top: 5px;
+    padding: 5px;
+}
