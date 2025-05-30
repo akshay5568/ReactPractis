@@ -6,6 +6,7 @@ import Services from "../components/Services";
 import Adddata from "../components/Adddata";
 import Calculator from "../components/Calculator";
 import TodoList from "../components/TodoList";
+import Weather from "../components/Weather";
 
 function Routess(){
     return (
@@ -17,6 +18,7 @@ function Routess(){
                 <Route path="/services" element={<Services/>} />
                 <Route path="/calculator" element={<Calculator/>} />
                 <Route path="/todo" element={<TodoList/>} />
+                <Route path="/weather" element={<Weather/>} />
             </Routes>  
         </div>
     )
