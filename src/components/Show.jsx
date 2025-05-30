@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 function Show(){
@@ -11,6 +11,10 @@ function Show(){
         const data = await axios.get(api)
         setProduct(data.data);
     }
+    
+    useEffect(()=>{
+        getData();
+    },[]);
 
     const Nav = useNavigate();
     const addData = () => {
@@ -21,10 +25,10 @@ function Show(){
     return(
         <div>
             <h1>Show</h1>
-            <button onClick={getData}>fatch Data From Api</button>
+            {/* <button onClick={getData}>fatch Data From Api</button> */}
             <button onClick={addData}>Add Data in Api</button>
              <br /><br /><hr />
-            {product.length > 0 ? product.map(item => <h1>{item.title}</h1>) : "Click Button fatch data button if you want to get data from and api...."}
+            {product.length > 0 ? product.map(item => <h1>{item.title}</h1>) : "Loading..."}
         </div>
     )
 }
