@@ -6,7 +6,7 @@ function Weather(){
 
    const [inputcity, setInputCity] = useState("");
    const [buttonCity,setButtonCity] = useState("");
-   const [weatherData,setWeatherData] = useState("");
+   const [weatherData,setWeatherData] = useState([]);
 
    const handleChange = (e) => {
        setInputCity(e.target.value);
@@ -19,13 +19,15 @@ function Weather(){
         try {
               const api = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=8572b723fd0ef1b96625f8644b0d2965`
               const ApiData = await axios.get(api);
-              setWeatherData(ApiData.data.weather[0].description);
+              setWeatherData(ApiData.data.main);
+              
         } catch (error) {
             console.error("Error fetching weather data:", error);
             setWeatherData("Failed to fetch weather data");
         } 
       
     }
+
 
 
     return (
@@ -39,7 +41,9 @@ function Weather(){
 
              <h1> {buttonCity}</h1>
              <hr /><br />
-             <h1>{weatherData}</h1>
+             <div>
+            {weatherData ? Object.entries(weatherData).map(([key, value]) => ( <p key={key}> <span>{key}</span>: {value} </p> )) : "No data available"}
+            </div>
         </div>
     )
 }
