@@ -14,7 +14,7 @@ const handleChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     if(data.trim() !== ""){
-        setTodos([...todos, data]);
+        setTodos([...todos,data]);
         setData("");
     }
 }
@@ -26,13 +26,12 @@ const handleSubmit = (e) => {
                     <input type="text" name="todo" placeholder="create Todo" value={data} onChange={handleChange}/>
                 <button>Add Todo</button>
                 </form>
-                <ul>
-                    {todos.map((todos,index)=> 
-                    <li key={index}>{todos}
-                        <button onClick={()=> setTodos(todos.filter((_, i) => i !== index))}>Delete</button>
-                    </li>
-                    )}
-                </ul>
+                {todos.map((item,index) => {
+                    return <div className="flex">
+                        <h1 className="pr-[55px]">{item}</h1>
+                        <button onClick={()=> setTodos(prev => prev.filter((_,i) => i !== index))}>delete</button>
+                    </div>
+                })}
         </div>
     )
 }
