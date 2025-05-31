@@ -1,7 +1,4 @@
-import {Router, Route } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-
-
 
 function NavBar() {
     return (
@@ -12,6 +9,7 @@ function NavBar() {
                 <NavLink to="/calculator" style={(e)=> e.isActive ? {color:"tomato"} : {color:"black"}}>Calculator</NavLink>
                 <NavLink to="/todo" style={(e)=> e.isActive ? {color:"tomato"} : {color:"black"}}>TodoApp</NavLink>
                 <NavLink to="/weather" style={(e)=> e.isActive ? {color:"tomato"} : {color:"black"}}>Weather App</NavLink>
+                <NavLink to="/contextapi" style={(e)=> e.isActive? {color:"tomato"} : {color:"black"}}>Context Api</NavLink>
         </nav>
     )
 
